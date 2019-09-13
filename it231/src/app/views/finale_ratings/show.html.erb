@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Series:</strong>
+  <%= @finale_rating.series %>
+</p>
+
+<p>
+  <strong>Viewership:</strong>
+  <%= @finale_rating.viewership %>
+</p>
+
+<p>
+  <strong>Householdrating:</strong>
+  <%= @finale_rating.householdrating %>
+</p>
+
+<p>
+  <strong>Share:</strong>
+  <%= @finale_rating.share %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @finale_rating.date %>
+</p>
+
+<p>
+  <strong>Network:</strong>
+  <%= @finale_rating.network %>
+</p>
+
+<%= link_to 'Edit', edit_finale_rating_path(@finale_rating) %> |
+<%= link_to 'Back', finale_ratings_path %>

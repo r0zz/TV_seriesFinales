@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Finale Ratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Series</th>
+      <th>Viewership</th>
+      <th>Householdrating</th>
+      <th>Share</th>
+      <th>Date</th>
+      <th>Network</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finale_ratings.each do |finale_rating| %>
+      <tr>
+        <td><%= finale_rating.series %></td>
+        <td><%= finale_rating.viewership %></td>
+        <td><%= finale_rating.householdrating %>%</td>
+        <td><%= finale_rating.share %>%</td>
+        <td><%= finale_rating.date %></td>
+        <td><%= finale_rating.network %></td>
+        <td><%= link_to 'Show', finale_rating %></td>
+        <td><%= link_to 'Edit', edit_finale_rating_path(finale_rating) %></td>
+        <td><%= link_to 'Destroy', finale_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Finale Rating', new_finale_rating_path %>

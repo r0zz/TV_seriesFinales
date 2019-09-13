@@ -1,0 +1,36 @@
+<h1>Search</h1>
+<%= form_tag :action => 'search' do %>
+<p> Looking for something? </br>
+</br><%= text_field_tag 'searchinput', @searchinput %>
+
+<% if @results > 0 %>
+    <% if @tvsearch.length >0 %>
+        <p> Here are the search results:</p>
+        <p>
+        <table>
+            <tr>
+                <th>Series</th>
+                <th>Viewership</th>
+                <th>Household Rating</th>
+                <th>Share</th>
+                <th>Date</th>
+                <th>Network</th>
+            </tr>
+            <% @tvsearch.each do |d| %>
+            <tr>
+                <td><%= d.series%></td>
+                <td><%= d.viewership%></td>
+                <td><%= d.householdrating%>%</td>
+                <td><%= d.share%>%</td>
+                <td><%= d.date%></td>
+                <td><%= d.network%></td>
+            </tr>
+            <% end %>
+        </table>
+
+    <% else%>
+    <p>There were no data points with your search criteria. Try again!</p>
+    <% end %>
+<% end %>
+<%= submit_tag 'Search' %>
+<% end %>

@@ -1,0 +1,22 @@
+<table bgcolor='white'>
+<tr>
+<td><%= link_to (image_tag 'film.png', size: "70x70"), home_login_path%>
+<td width='80%'> <h1 style="font-size:30px"> Most viewed TV Series Finales </h1> </td>
+<td width='7%'> <h4> <%= link_to "Log In", home_login_path %> </h4> </td>
+<td width='7%'> <h4> <%= link_to "Log Out", home_logout_path %> </h4> </td>
+</tr>
+</table>
+
+<table bgcolor='white'>
+<tr>
+<td width='1%'> <h4> <%= link_to "Home", home_home_path %> </h4></td>
+<td width='3%'><h4> <%= link_to "Search", home_search_path %> </h4></td>
+<td width='7%'><h4> <%= link_to "Dataset Info", finale_ratings_url %> </h4></td>
+<td width='7%'><h4> <%= link_to "Sorty By Series", sortby_srs_url %> </h4></td>
+<td width='9%'><h4> <%= link_to "Sorty By Network", sortby_net_url %> </h4></td>
+<td width='13%'><h4> <%= link_to "Sorty By Household Rating", sortby_hhr_url %> </h4></td>
+<td width='10%'><h4> <%= link_to "Sorty By Viewership", sortby_vws_url %> </h4></td>
+
+<td width='72%'> </td>
+</tr>
+</table>

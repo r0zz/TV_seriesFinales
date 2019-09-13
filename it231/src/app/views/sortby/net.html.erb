@@ -1,0 +1,25 @@
+<h1>Sortby Network</h1>
+
+<table>
+            <tr>
+                <th>Series</th>
+                <th>Viewership</th>
+                <th>Household Rating</th>
+                <th>Share</th>
+                <th>Date</th>
+                <th>Network</th>
+            </tr>
+
+ <tbody>
+    <% @ratingz.each do |ratingz| %>
+      <tr>
+        <td><%= ratingz.series%></td>
+        <td><%= ratingz.viewership%></td>
+        <td><%= ratingz.householdrating%>%</td>
+         <td><%= ratingz.share%>%</td>
+        <td><%= ratingz.date%></td>
+        <td><%= ratingz.network%></td>
+      </tr>
+    <% end %>
+     </tbody>
+     </table>

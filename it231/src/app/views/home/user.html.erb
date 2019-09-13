@@ -1,0 +1,66 @@
+<% if @myitems.length > 0%>
+<%= form_tag :action => 'removeItems' do %>
+<h1>My Saved Shows</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Remove a Show </th>
+      <th>Series</th>
+      <th>Viewership</th>
+      <th>Household Rating</th>
+      <th>Share</th>
+      <th>Network</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @myitems.each do |my_shows| %>
+      <tr>
+        <td><%= check_box_tag my_shows.id, my_shows.id%></td>
+        <td><%= my_shows.series %></td>
+        <td><%= my_shows.viewership %></td>
+        <td><%= my_shows.householdrating %></td>
+        <td><%= my_shows.share %></td>
+        <td><%= my_shows.network %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= submit_tag 'Save' %> <h2 id='notice'><%= notice %></h2>
+<% end %>
+<%else%>
+  <p>You have not saved any shows</p>
+<%end%>
+
+<h1>Select favorite Shows</h1>
+<%= form_tag :action => 'saveList' do %>
+<table>
+  <thead>
+    <tr>
+      <th>Choose a Show </th>
+      <th>Series</th>
+      <th>Viewership</th>
+      <th>Household Rating</th>
+      <th>Share</th>
+      <th>Network</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_shows.each do |my_shows| %>
+      <tr>
+        <td><%= check_box_tag my_shows.id, my_shows.id%></td>
+        <td><%= my_shows.series %></td>
+        <td><%= my_shows.viewership %></td>
+        <td><%= my_shows.householdrating %></td>
+        <td><%= my_shows.share %></td>
+        <td><%= my_shows.network %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= submit_tag 'Save' %>
+<% end %>
